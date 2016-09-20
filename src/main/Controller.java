@@ -49,6 +49,23 @@ public class Controller {
                 "git -C " + directory + " "+ gitCommand +""
         };
         String returnText = execCommand(cmd);
+
+        return returnText;
+    }
+
+
+
+
+    public String gitPush(String directory, String gitCommand, String Username, String Password){
+        //what to run in the terminal
+        String[] cmd = {
+                "/bin/bash", "-c",
+                "git -C " + directory + " "+ gitCommand +""
+        };
+        String returnText = execCommand(cmd);
+
+
+
         if (returnText.contains("Username:")){
             String[] cmd2 = {
                     "/bin/bash", "-c",
@@ -62,6 +79,7 @@ public class Controller {
             };
             returnText = execCommand(cmd);
         }
+
         return returnText;
     }
 

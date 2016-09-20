@@ -48,10 +48,10 @@ public class Gui extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 textAreaBashOutput.setText("");
                 String returnText = controller.gitRequest(TextFieldDirectory.getText(), "add .");
-                textAreaBashOutput.setText(returnText);
+                textAreaBashOutput.setText(returnText+"\n"+"\n");
                 returnText += controller.gitRequest(TextFieldDirectory.getText(), "commit -m 'test commit' ");
-                textAreaBashOutput.setText(returnText);
-                returnText += controller.gitRequest(TextFieldDirectory.getText(), "push origin master");
+                textAreaBashOutput.setText(returnText+"\n"+"\n");
+                returnText += controller.gitPush(TextFieldDirectory.getText(), "push origin master", "warriv93", "jk75tdsd");
                 textAreaBashOutput.setText(returnText);
             }
         });
