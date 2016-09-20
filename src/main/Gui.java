@@ -14,7 +14,6 @@ public class Gui extends JFrame{
     private JPanel rootPanel;
     private JButton btAllInOne;
     private JTextField TextFieldDirectory;
-    private JButton button1;
 
 
     /*
@@ -32,17 +31,13 @@ public class Gui extends JFrame{
         setSize(800,800);
 //        close application on exit
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        TextFieldDirectory.setText("/home/simon/IdeaProjects/gitHelper");
 
 
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.print("yolo");
-            }
-        });
         btGetStatus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                textAreaBashOutput.setText("");
                 String returnText = controller.gitRequest(TextFieldDirectory.getText(), "status");
                 textAreaBashOutput.setText(returnText);
             }
@@ -51,9 +46,13 @@ public class Gui extends JFrame{
         btAllInOne.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.gitRequest(TextFieldDirectory.getText(), "add .");
-                controller.gitRequest(TextFieldDirectory.getText(), "commit -m 'initial commit' ");
-                controller.gitRequest(TextFieldDirectory.getText(), "push origin master");
+                textAreaBashOutput.setText("");
+                String returnText = controller.gitRequest(TextFieldDirectory.getText(), "add .");
+                textAreaBashOutput.setText(returnText);
+                returnText += controller.gitRequest(TextFieldDirectory.getText(), "commit -m 'test commit' ");
+                textAreaBashOutput.setText(returnText);
+                returnText += controller.gitRequest(TextFieldDirectory.getText(), "push origin master");
+                textAreaBashOutput.setText(returnText);
             }
         });
 
