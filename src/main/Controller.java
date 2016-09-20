@@ -48,7 +48,21 @@ public class Controller {
                 "/bin/bash", "-c",
                 "git -C " + directory + " "+ gitCommand +""
         };
-        return execCommand(cmd);
+        String returnText = execCommand(cmd);
+        if (returnText.contains("Username:")){
+            String[] cmd2 = {
+                    "/bin/bash", "-c",
+                    "warriv93"
+            };
+            returnText = execCommand(cmd);
+        }else if (returnText.contains("Password:")){
+            String[] cmd2 = {
+                    "/bin/bash", "-c",
+                    "jk75tdsd"
+            };
+            returnText = execCommand(cmd);
+        }
+        return returnText;
     }
 
 
