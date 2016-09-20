@@ -1,4 +1,4 @@
-package sample;
+package main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +14,7 @@ public class Gui extends JFrame{
     private JPanel rootPanel;
     private JButton btAllInOne;
     private JTextField TextFieldDirectory;
+    private JButton button1;
 
 
     /*
@@ -33,6 +34,12 @@ public class Gui extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.print("yolo");
+            }
+        });
         btGetStatus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
