@@ -51,7 +51,7 @@ public class Gui extends JFrame{
                 textAreaBashOutput.setText(returnText+"\n"+"\n");
                 returnText += controller.gitRequest(TextFieldDirectory.getText(), "commit -m 'test commit' ");
                 textAreaBashOutput.setText(returnText+"\n"+"\n");
-                returnText += controller.gitPush(TextFieldDirectory.getText(), "push origin master", "warriv93", "jk75tdsd");
+                returnText += controller.gitPush(TextFieldDirectory.getText(), "push origin master", "warriv93", "**");
                 textAreaBashOutput.setText(returnText);
             }
         });

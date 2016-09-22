@@ -75,7 +75,7 @@ public class Controller {
         }else if (returnText.contains("Password:")){
             String[] cmd2 = {
                     "/bin/bash", "-c",
-                    "jk75tdsd"
+                    "**"
             };
             returnText = execCommand(cmd);
         }
